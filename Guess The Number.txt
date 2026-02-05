@@ -1,0 +1,30 @@
+#Welcome to Guess The Number 
+import random
+#Here we imported the random function which is crucial in the code
+print("Welcome to Guess The Number(1-100)!")
+a=input("Do you want to guess the number(Yes/No)?:")
+#Here we use the imported random function,and randint() function,as we want an integer 
+b=random.randint(1,100)
+#Here the number which the user has to guess is registered in the code
+#Here is the number of attempts taken initially to guess the number
+i=0
+while True:
+#Here we use the while loop with a true condition to continue the game,even if the user takes multiple attempts to guess the number
+    if a=="Yes" or a=="YES" or a=="yes":
+        #The number of attempts increases by one for every guess made by the user
+        c=int(input("Enter your guess:"))
+        i+=1
+        if c==b:
+            print(c,"is correct! It took you",i,"attempts to guess the number.")
+            break
+            #The loop will break here if the user entered number matches the number stored
+        elif c>b:
+            print(c,"is greater than the number.")
+        elif c<b:
+            print(c,"is smaller than the number.")
+        else:
+            print(c,"is an invalid guess.")
+    else:
+        print("Maybe next time!")
+        break
+        #The loop wil break if the user is not interested to play the game
